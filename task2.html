@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .description {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .color-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .color-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .color-btn:active {
+            transform: translateY(0);
+        }
+        
+        #red-btn {
+            background-color: #e74c3c;
+        }
+        
+        #green-btn {
+            background-color: #2ecc71;
+        }
+        
+        #blue-btn {
+            background-color: #3498db;
+        }
+        
+        .current-color {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgba(206, 157, 157, 0.8);
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .instructions {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f2f7fc;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .instructions h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .instructions p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .color-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BACKGROUND COLOUR CHANGE</h1>
+        <P><b><i>Hello,i am pranav priyadarshi (RANSH)</i></b></P>
+        <p class="description">Click on any of the buttons below to change the background color of this page. This demonstrates how JavaScript can manipulate CSS styles dynamically.</p>
+        
+        <div class="buttons-container">
+            <button id="red-btn" class="color-btn">Red</button>
+            <button id="green-btn" class="color-btn">Green</button>
+            <button id="blue-btn" class="color-btn">Blue</button>
+        </div>
+        
+        <div class="current-color">
+            Current background color: <span id="color-name">Default</span>
+        </div>
+        
+        <div class="instructions">
+            <h2>How It Works</h2>
+            <p>• Clicking the "Red" button sets the background to red using: <code>document.body.style.backgroundColor = "red"</code></p>
+            <p>• Clicking the "Green" button sets the background to green using: <code>document.body.style.backgroundColor = "green"</code></p>
+            <p>• Clicking the "Blue" button sets the background to blue using: <code>document.body.style.backgroundColor = "blue"</code></p>
+        </div>
+    </div>
+
+    <script>
+        // Get the buttons
+        const redBtn = document.getElementById('red-btn');
+        const greenBtn = document.getElementById('green-btn');
+        const blueBtn = document.getElementById('blue-btn');
+        const colorName = document.getElementById('color-name');
+        
+        // Add event listeners to the buttons
+        redBtn.addEventListener('click', function() {
+            document.body.style.backgroundColor = "red";
+            colorName.textContent = "Red";
+            colorName.style.color = "red";
+        });
+        
+        greenBtn.addEventListener('click', function() {
+            document.body.style.backgroundColor = "green";
+            colorName.textContent = "Green";
+            colorName.style.color = "green";
+        });
+        
+        blueBtn.addEventListener('click', function() {
+            document.body.style.backgroundColor = "blue";
+            colorName.textContent = "Blue";
+            colorName.style.color = "blue";
+        });
+    </script>
+</body>
+</html>
